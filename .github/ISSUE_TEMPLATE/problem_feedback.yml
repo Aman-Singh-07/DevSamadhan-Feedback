@@ -1,0 +1,94 @@
+name: Problem Feedback
+description: >-
+  Report an issue with a DevSamadhan problem page -- incorrect code,
+  unclear explanation, complexity error, or another concern.
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > **Warning: Public visibility**
+        >
+        > Issues in this repository are **public**. Do not include personal data,
+        > credentials, secrets, or security-sensitive information in your report.
+
+        Thank you for helping improve DevSamadhan! Please fill out the fields below
+        so we can locate and address the issue quickly.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Issue category
+      description: Select the category that best describes the issue.
+      options:
+        - Incorrect code or output
+        - Unclear explanation
+        - Complexity or correctness issue
+        - Source attribution or provenance issue
+        - Accessibility or UI issue
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: problem-name
+    attributes:
+      label: Problem name
+      description: 'The name of the problem as shown on DevSamadhan (e.g. "Two Sum").'
+      placeholder: "Two Sum"
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform and platform problem ID
+      description: |
+        The origin platform and its problem identifier
+        (e.g. "LeetCode #1" or "GeeksforGeeks / trapping-rain-water").
+      placeholder: "LeetCode #1"
+    validations:
+      required: false
+
+  - type: input
+    id: problem-url
+    attributes:
+      label: DevSamadhan problem URL
+      description: |
+        The canonical URL of the problem page on DevSamadhan
+        (e.g. https://dev-samadhan-three.vercel.app/problems/two-sum).
+      placeholder: "https://dev-samadhan-three.vercel.app/problems/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the issue clearly. What is wrong, misleading, or missing?
+      placeholder: "The brute-force time complexity is listed as O(N) but should be O(N^2)."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-vs-actual
+    attributes:
+      label: Expected vs. actual behaviour
+      description: |
+        If applicable, describe what you expected and what you observed instead.
+      placeholder: |
+        Expected: The editorial should state O(N^2) for brute force.
+        Actual: It states O(N).
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Any extra information: screenshots, links to external references,
+        browser details, or steps to reproduce.
+    validations:
+      required: false
